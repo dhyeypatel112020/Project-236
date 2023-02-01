@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Google
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            let html;
+            $(document).ready(function(){
+                $.ajax({
+                    url:'https://code.whitehatjr.com/s/dashboard',
+                    success:function(data){
+                        html=data
+                        displayhtml()
+                    }
+
+                })
+            })
+            function displayhtml(){
+                $("body").append(html)
+                $(".col-lg-4").remove()
+                $(".col-lg-8").removeClass("col-lg-8").addClass("col-lg-12")
+            }
+
+        </script>
+
+    </body>
+</html>
